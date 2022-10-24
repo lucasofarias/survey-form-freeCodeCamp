@@ -14,12 +14,13 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #FFF;
+    color: #00F;
 }
 
 header {
     margin: 4em 0;
     text-align: center;
+    color: #FFF;
 }
 
 header #title {
@@ -33,7 +34,7 @@ header #description {
 
 #survey-form {
     width: 840px;
-    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 2px;
     padding: 2em;
     margin-bottom: 4em;
@@ -44,6 +45,7 @@ header #description {
     display: flex;
     flex-direction: column;
     margin-bottom: 2em;
+    position: relative;
 }
 
 .text-field label, .option-field h3 {
@@ -53,13 +55,29 @@ header #description {
 }
 
 .text-field input {
-    border: 1px solid #FFF;
+    border: none;
     border-radius: 5px;
     background: transparent;
+    outline: none;
     height: 3em;
-    padding: 1em;
-    color: #FFF;
     font-size: 16px;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #00F;
+}
+
+#dropdown {
+    color: #00F;
+    border: 1px solid #00F;
+    border-radius: 5px;
+    outline: none;
 }
     
 .option-field {
@@ -78,6 +96,7 @@ header #description {
     margin-right: 0.25em;
     width: 15px;
     height: 15px;
+    outline: none;
 }
 
 .option-field div label {
@@ -96,11 +115,12 @@ header #description {
 
 #comment textarea {
     width: 100%;
+    max-width: 100%;
     background: transparent;
-    border: 1px solid #FFF;
+    border: 1px solid #000;
     border-radius: 5px;
+    outline: none;
     padding: 1em;
-    color: #FFF;
     font-size: 16px;
 }
 
@@ -111,18 +131,19 @@ header #description {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    background-color: #FFF;
-    color: #00F;
-    border: 1px solid #FFF;
+    background-color: #00F;
+    color: #FFF;
+    border: none;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     margin: 0 auto;
+    transition: all 0.3s ease;
 }
 
 #submit:hover {
-    background-color: #000;
-    color: #FFF;
+    background-color: #FFF;
+    color: #00F;
+    border: 1px solid #00F;
 }
 
 @media (max-width: 840px) {
